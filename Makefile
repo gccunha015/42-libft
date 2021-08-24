@@ -1,9 +1,11 @@
-NAME	= libft
+NAME	= libft.a
 CC	= clang
 CFLAGS	= -Wall -Wextra -Werror
 CFILES	= ft_isupper.c \
 	  ft_islower.c \
-	  ft_isalpha.c
+	  ft_isalpha.c \
+	  ft_isdigit.c \
+	  ft_isalnum.c
 OBJS	= $(CFILES:.c=.o)
 AR	= ar rcs
 RM	= rm -f
@@ -14,7 +16,7 @@ RM	= rm -f
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-		$(AR) $(NAME).a $(OBJS)
+		$(AR) $(NAME) $(OBJS)
 
 clean:
 		$(RM) $(OBJS)
