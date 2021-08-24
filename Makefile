@@ -8,7 +8,8 @@ CFILES	= ft_isupper.c \
 	  ft_isalnum.c \
 	  ft_isascii.c \
 	  ft_isprint.c \
-	  ft_strlen.c
+	  ft_strlen.c \
+	  ft_memset.c
 OBJS	= $(CFILES:.c=.o)
 AR	= ar rcs
 RM	= rm -f
