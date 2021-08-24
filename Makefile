@@ -5,7 +5,7 @@ CFILES	= ft_isupper.c \
 	  ft_islower.c \
 	  ft_isalpha.c
 OBJS	= $(CFILES:.c=.o)
-AR	= ar rc
+AR	= ar rcs
 RM	= rm -f
 
 .c.o:		$(CFILES)
