@@ -8,7 +8,8 @@ CFILES	= ft_isalpha.c \
 	  ft_isprint.c \
 	  ft_strlen.c \
 	  ft_memset.c \
-	  ft_bzero.c
+	  ft_bzero.c \
+	  ft_memcpy.c
 OBJS	= $(CFILES:.c=.o)
 AR	= ar rcs
 RM	= rm -f
@@ -16,7 +17,7 @@ RM	= rm -f
 .c.o:		$(CFILES)
 		$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-all:		$(NAME) clean
+all:		$(NAME)
 
 $(NAME):	$(OBJS)
 		$(AR) $(NAME) $(OBJS)
