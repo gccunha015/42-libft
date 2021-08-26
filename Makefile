@@ -1,7 +1,19 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                          :::      ::::::::   #
+#   Makefile                                             :+:      :+:    :+:   #
+#                                                      +:+ +:+         +:+     #
+#   By: gcoelho- <gcoelho-@student.42sp.org.br>      +#+  +:+       +#+        #
+#                                                  +#+#+#+#+#+   +#+           #
+#   Created: 2021/08/26 10:22:33 by gcoelho-            #+#    #+#             #
+#   Updated: 2021/08/26 10:37:53 by gcoelho-           ###   ########.fr       #
+#                                                                              #
+# **************************************************************************** #
+
 NAME	= libft.a
 CC	= clang
 CFLAGS	= -Wall -Wextra -Werror
-CFILES	= ft_isalpha.c \
+SRC	= ft_isalpha.c \
 	  ft_isdigit.c \
 	  ft_isalnum.c \
 	  ft_isascii.c \
@@ -10,16 +22,17 @@ CFILES	= ft_isalpha.c \
 	  ft_memset.c \
 	  ft_bzero.c \
 	  ft_memcpy.c
-OBJS	= $(CFILES:.c=.o)
+INCLUDE = libft.h
+OBJS	= $(SRC:.c=.o)
 AR	= ar rcs
 RM	= rm -f
 
-.c.o:		$(CFILES)
+.c.o:		$(SRC)
 		$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS)
+$(NAME):	$(OBJS) $(INCLUDE)
 		$(AR) $(NAME) $(OBJS)
 
 clean:

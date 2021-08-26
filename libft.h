@@ -12,5 +12,6 @@ t_size	ft_strlen(const char *s);
 void	*ft_memset(void *dest, int c, t_size len);
 void	ft_bzero(void *b, t_size len);
 void	*ft_memcpy(void *dst, const void *src, t_size len);
+void	*ft_memmove(void *dst, const void *src, t_size len);
 
 #endif
