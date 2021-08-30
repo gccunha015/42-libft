@@ -6,7 +6,7 @@
 /*  By: gcoelho- <gcoelho-@student.42sp.org.br>      +#+  +:+       +#+       */
 /*                                                 +#+#+#+#+#+   +#+          */
 /*  Created: 2021/08/26 07:46:21 by gcoelho-            #+#    #+#            */
-/*  Updated: 2021/08/30 08:31:13 by gcoelho-           ###   ########.fr      */
+/*  Updated: 2021/08/30 15:54:43 by gcoelho-           ###   ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 void	ft_bzero(void *b, t_size len)
 {
-	char	*ptr;
-
-	ptr = b;
-	while (len--)
-		*(ptr++) = '\0';
+	ft_memset(b, '\0', len);
 }
