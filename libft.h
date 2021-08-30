@@ -1,7 +1,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-typedef unsigned int	t_size;
+typedef unsigned long	t_size;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
