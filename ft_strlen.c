@@ -6,7 +6,7 @@
 /*  By: gcoelho- <gcoelho-@student.42sp.org.br>      +#+  +:+       +#+       */
 /*                                                 +#+#+#+#+#+   +#+          */
 /*  Created: 2021/08/24 15:14:19 by gcoelho-            #+#    #+#            */
-/*  Updated: 2021/08/25 13:22:36 by gcoelho-           ###   ########.fr      */
+/*  Updated: 2021/08/30 14:07:18 by gcoelho-           ###   ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 t_size	ft_strlen(const char *s)
 {
-	t_size	size;
+	t_size	len;
 
-	size = -1;
-	while (s[++size])
+	len = -1;
+	while (s[++len])
 		;
-	return (size);
+	return (len);
 }
