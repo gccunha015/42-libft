@@ -6,7 +6,7 @@
 /*  By: gcoelho- <gcoelho-@student.42sp.org.br>      +#+  +:+       +#+       */
 /*                                                 +#+#+#+#+#+   +#+          */
 /*  Created: 2021/08/30 16:01:25 by gcoelho-            #+#    #+#            */
-/*  Updated: 2021/08/30 16:29:30 by gcoelho-           ###   ########.fr      */
+/*  Updated: 2021/08/31 10:13:26 by gcoelho-           ###   ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_size	ft_strlcat(char *dst, const char *src, t_size dstsize)
 	idx = -1;
 	while (++idx < (dstsize - dst_len - 1) && src[idx])
 		dst[dst_len + idx] = src[idx];
-	if (dst_len < dstsize)
-		dst[idx] = '\0';
+	if (dst_len < (dstsize - 1))
+		dst[dst_len + idx] = '\0';
 	return (dst_len + ft_strlen(src));
 }

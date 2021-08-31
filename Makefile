@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                          :::      ::::::::   #
-#   Makefile                                             :+:      :+:    :+:   #
-#                                                      +:+ +:+         +:+     #
-#   By: gcoelho- <gcoelho-@student.42sp.org.br>      +#+  +:+       +#+        #
-#                                                  +#+#+#+#+#+   +#+           #
-#   Created: 2021/08/26 10:22:33 by gcoelho-            #+#    #+#             #
-#   Updated: 2021/08/30 14:24:02 by gcoelho-           ###   ########.fr       #
-#                                                                              #
-# **************************************************************************** #
-
 NAME	= libft.a
 CC	= clang
 CFLAGS	= -Wall -Wextra -Werror
@@ -23,7 +11,8 @@ SRC	= ft_isalpha.c \
 	  ft_bzero.c \
 	  ft_memcpy.c \
 	  ft_memmove.c \
-	  ft_strlcpy.c
+	  ft_strlcpy.c \
+	  ft_strlcat.c
 INCLUDE = libft.h
 OBJS	= $(SRC:.c=.o)
 AR	= ar rcs
