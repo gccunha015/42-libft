@@ -15,5 +15,7 @@ void	*ft_memcpy(void *dst, const void *src, t_size len);
 void	*ft_memmove(void *dst, const void *src, t_size len);
 t_size	ft_strlcpy(char *dst, const char *src, t_size dstsize);
 t_size	ft_strlcat(char *dst, const char *src, t_size dstsize);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 #endif
