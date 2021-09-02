@@ -6,7 +6,7 @@
 /*  By: gcoelho- <gcoelho-@student.42sp.org.br>      +#+  +:+       +#+       */
 /*                                                 +#+#+#+#+#+   +#+          */
 /*  Created: 2021/09/02 10:20:41 by gcoelho-            #+#    #+#            */
-/*  Updated: 2021/09/02 14:57:50 by gcoelho-           ###   ########.fr      */
+/*  Updated: 2021/09/02 15:43:39 by gcoelho-           ###   ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	idx = ft_strlen(s) + 1;
 	while (--idx >= 0)
 	{
-		if (s[idx] == c)
+		if (s[idx] == (char) c)
 			return ((char *) &s[idx]);
 		if (idx == 0)
 			break ;
