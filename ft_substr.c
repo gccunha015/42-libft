@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         :::      ::::::::  */
-/*  ft_atoi.c                                            :+:      :+:    :+:  */
+/*  ft_substr.c                                          :+:      :+:    :+:  */
 /*                                                     +:+ +:+         +:+    */
 /*  By: gcoelho- <gcoelho-@student.42sp.org.br>      +#+  +:+       +#+       */
 /*                                                 +#+#+#+#+#+   +#+          */
-/*  Created: 2021/09/03 10:07:50 by gcoelho-            #+#    #+#            */
-/*  Updated: 2021/09/03 10:15:05 by gcoelho-           ###   ########.fr      */
+/*  Created: 2021/09/03 15:17:53 by gcoelho-            #+#    #+#            */
+/*  Updated: 2021/09/03 15:38:09 by gcoelho-           ###   ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	size_t	size;
+	char	*sub;
 
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	size_t	len;
-	char	*str;
-
-	len = ft_strlen(s1);
-	str = (char *) malloc(sizeof(char) * (len + 1));
+	size = len + 1;
+	sub = (char *) malloc(size * sizeof(char));
+	if (sub)
+		ft_memcpy(sub, s + start, size);
+	return (sub);
 }

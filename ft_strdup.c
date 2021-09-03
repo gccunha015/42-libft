@@ -6,7 +6,7 @@
 /*  By: gcoelho- <gcoelho-@student.42sp.org.br>      +#+  +:+       +#+       */
 /*                                                 +#+#+#+#+#+   +#+          */
 /*  Created: 2021/09/03 12:59:49 by gcoelho-            #+#    #+#            */
-/*  Updated: 2021/09/03 13:14:08 by gcoelho-           ###   ########.fr      */
+/*  Updated: 2021/09/03 15:42:46 by gcoelho-           ###   ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 char	*ft_strdup(const char *str)
 {
-	size_t	size;
-	char	*dup;
-
-	size = ft_strlen(str) + 1;
-	dup = (char *) malloc(size * sizeof(char));
-	if (dup)
-		ft_memcpy(dup, str, size);
-	return (dup);
+	return (ft_substr(str, 0, ft_strlen(str)));
 }

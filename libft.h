@@ -2,6 +2,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 
+/* Part 1 - Libc functions */
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -24,5 +25,8 @@ int		ft_memcmp(const void *b1, const void *b2, size_t len);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 void	*ft_calloc(size_t number, size_t size);
 char	*ft_strdup(const char *str);
+
+/* Part 2 - Additional functions */
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
