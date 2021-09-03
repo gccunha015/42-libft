@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                         :::      ::::::::  */
-/*  ft_strrchr.c                                         :+:      :+:    :+:  */
+/*  ft_memcmp.c                                          :+:      :+:    :+:  */
 /*                                                     +:+ +:+         +:+    */
 /*  By: gcoelho- <gcoelho-@student.42sp.org.br>      +#+  +:+       +#+       */
 /*                                                 +#+#+#+#+#+   +#+          */
-/*  Created: 2021/09/02 10:20:41 by gcoelho-            #+#    #+#            */
-/*  Updated: 2021/09/03 07:39:00 by gcoelho-           ###   ########.fr      */
+/*  Created: 2021/09/03 07:40:38 by gcoelho-            #+#    #+#            */
+/*  Updated: 2021/09/03 07:53:53 by gcoelho-           ###   ########.fr      */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_memcmp(const void *b1, const void *b2, size_t len)
 {
-	size_t	idx;
+	size_t				idx;
+	const unsigned char	*s1;
+	const unsigned char	*s2;
 
-	idx = ft_strlen(s) + 1;
-	while (--idx > 0)
-		if (s[idx] == (char) c)
-			return ((char *) &s[idx]);
-	if (s[idx] == (char) c)
-		return ((char *) &s[idx]);
-	return (NULL);
+	idx = -1;
+	s1 = b1;
+	s2 = b2;
+	while (++idx < len)
+		if (s1[idx] != s2[idx])
+			return (s1[idx] - s2[idx]);
+	return (0);
 }
