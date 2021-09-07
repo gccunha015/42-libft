@@ -15,10 +15,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = s_len - start;
 	size = len + 1;
 	sub = (char *) malloc(size * sizeof(char));
-	if (sub)
-	{
-		ft_memcpy(sub, s + start, len);
-		sub[len] = '\0';
-	}
+	if (!sub)
+		return (NULL);
+	ft_memcpy(sub, s + start, len);
+	sub[len] = '\0';
 	return (sub);
 }
