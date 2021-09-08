@@ -7,9 +7,11 @@ static char		**split_s(char const *s, char c, size_t word_count);
 
 char	**ft_split(char const *s, char c)
 {
-	size_t		word_count;
 	char const	*ptr;
+	size_t		word_count;
 
+	if (!s || !c)
+		return (NULL);
 	ptr = s;
 	word_count = 0;
 	while (*ptr)
@@ -24,7 +26,7 @@ char	**ft_split(char const *s, char c)
 static char	**split_s(char const *s, char c, size_t word_count)
 {
 	size_t	current_word;
-	size_t	word_size;
+	size_t	word_len;
 	char	**split;
 
 	split = (char **) malloc((word_count + 1) * sizeof(char *));
@@ -34,15 +36,14 @@ static char	**split_s(char const *s, char c, size_t word_count)
 	while (*s && ++current_word < word_count)
 	{
 		go_to_next_word(&s, c);
-		word_size = get_word_len(s, c) + 1;
-		split[current_word] = (char *) malloc(word_size * sizeof(char));
+		word_len = get_word_len(s, c);
+		split[current_word] = ft_substr(s, 0, word_len);
 		if (!split[current_word])
 		{
 			free_memory(split, word_count);
 			return (NULL);
 		}
-		ft_strlcpy(split[current_word], s, word_size);
-		s += word_size - 1;
+		s += word_len;
 	}
 	split[word_count] = NULL;
 	return (split);
