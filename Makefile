@@ -10,8 +10,10 @@ PART_1	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 PART_2	= ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
 	  ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 	  ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+BONUS	= ft_lstnew.c
 INCLUDE = libft.h
 OBJS	= $(PART_1:.c=.o) $(PART_2:.c=.o)
+BOBJS	= $(BONUS:.c=.o)
 AR	= ar rcs
 RM	= rm -f
 
@@ -22,6 +24,9 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS) $(INCLUDE)
 		$(AR) $(NAME) $(OBJS)
+
+bonus:		$(BOBJS) $(INCLUDE)
+		$(AR) $(NAME) $(BOBJS)
 
 clean:
 		$(RM) $(OBJS)
