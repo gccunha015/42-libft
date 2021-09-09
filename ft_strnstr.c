@@ -2,11 +2,17 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if (!ft_strlen(little))
+	size_t	l_len;
+
+	l_len = ft_strlen(little);
+	if (!l_len)
 		return ((char *) big);
-	while (len && ft_strncmp(big, little, len--))
+	while (*big && len > l_len && ft_strncmp(big, little, l_len))
+	{
+		len--;
 		big++;
-	if (len && !ft_strncmp(big, little, len))
+	}
+	if (len >= l_len && !ft_strncmp(big, little, l_len))
 		return ((char *) big);
 	return (NULL);
 }

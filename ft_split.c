@@ -7,12 +7,15 @@ static char		**split_s(char const *s, char c, size_t word_count);
 
 char	**ft_split(char const *s, char c)
 {
+	char		*s_trimmed;
 	char const	*ptr;
 	size_t		word_count;
+	char		**split;
 
-	if (!s || !c)
+	if (!s)
 		return (NULL);
-	ptr = s;
+	s_trimmed = ft_strtrim(s, &c);
+	ptr = s_trimmed;
 	word_count = 0;
 	while (*ptr)
 	{
@@ -20,7 +23,9 @@ char	**ft_split(char const *s, char c)
 		ptr += get_word_len(ptr, c);
 		word_count++;
 	}
-	return (split_s(s, c, word_count));
+	split = split_s(s_trimmed, c, word_count);
+	free(s_trimmed);
+	return (split);
 }
 
 static char	**split_s(char const *s, char c, size_t word_count)
