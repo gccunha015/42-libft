@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gcoelho- <gcoelho-@student.42sp.org>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/10 18:35:14 by gcoelho-          #+#    #+#             */
+/*   Updated: 2021/09/10 18:35:14 by gcoelho-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static size_t	determine_len(unsigned int un);
-static char		*allocate_memory(unsigned int un, size_t *len);
 static void		convert(unsigned int un, char *str, size_t len);
 
 char	*ft_itoa(int n)
@@ -17,7 +28,8 @@ char	*ft_itoa(int n)
 		un *= -1;
 		len = 1;
 	}
-	str = allocate_memory(un, &len);
+	len += determine_len(un);
+	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	if (n < 0)
@@ -32,17 +44,6 @@ static void	convert(unsigned int un, char *str, size_t len)
 	if (un > 9)
 		convert(un / 10, str, len - 1);
 	str[len] = (un % 10) + '0';
-}
-
-static char	*allocate_memory(unsigned int un, size_t *len)
-{
-	char	*str;
-
-	*len += determine_len(un);
-	str = malloc((*len + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	return (str);
 }
 
 static size_t	determine_len(unsigned int un)

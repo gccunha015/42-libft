@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gcoelho- <gcoelho-@student.42sp.org>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/10 18:35:13 by gcoelho-          #+#    #+#             */
+/*   Updated: 2021/09/10 18:35:13 by gcoelho-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static void		go_to_next_word(char const **s, char c);
@@ -15,6 +27,8 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	s_trimmed = ft_strtrim(s, &c);
+	if (!s_trimmed)
+		return (NULL);
 	ptr = s_trimmed;
 	word_count = 0;
 	while (*ptr)
