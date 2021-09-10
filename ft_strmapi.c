@@ -13,5 +13,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	idx = -1;
 	while (s[++idx])
 		result[idx] = f(idx, s[idx]);
+	result[idx] = '\0';
 	return (result);
 }

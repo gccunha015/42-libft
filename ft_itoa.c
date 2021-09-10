@@ -16,13 +16,14 @@ char	*ft_itoa(int n)
 	{
 		un *= -1;
 		len = 1;
-		str = allocate_memory(un, &len);
-		str[0] = '-';
 	}
-	else
-		str = allocate_memory(un, &len);
+	str = allocate_memory(un, &len);
+	if (!str)
+		return (NULL);
+	if (n < 0)
+		str[0] = '-';
+	convert(un, str, len - 1);
 	str[len] = '\0';
-	convert(un, str, --len);
 	return (str);
 }
 
