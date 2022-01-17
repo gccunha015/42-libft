@@ -1,7 +1,10 @@
 <div align="center">
 	<h1>
-		This project is a C library that contains functions to be used in future projects
+		Libft
 	</h1>
+	<h2>
+		This project is a C library that contains functions to be used in future projects
+	</h2>
 	<h2>
 		<a href="https://github.com/gccunha015/libft/wiki/">
 			Documentation
