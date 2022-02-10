@@ -14,17 +14,27 @@ PART_2	= ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
 BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 	  ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 	  ft_lstmap.c
-GNLP	= gnl
+GNLP	= get_next_line
 GNLSRC	= get_next_line.c
+PFP	= ft_printf
+PFSRC	= ft_printf.c print_without_format.c print_formated.c get_flags.c \
+	  print_char.c print_string.c print_hexadecimal.c ft_uitoa_base.c \
+	  print_signed_decimal.c print_unsigned_decimal.c set_flags.c \
+	  print_pointer.c handle_flags.c handle_alternate_form.c \
+	  handle_width.c handle_precision.c handle_signed.c handle_blank.c
 ICDP	= include
 ICDS	= -I$(ICDP)
 OBJP	= obj
 OBJS	= $(PART_1:%.c=$(OBJP)/%.o) $(PART_2:%.c=$(OBJP)/%.o)
 BOBJS	= $(BONUS:%.c=$(OBJP)/%.o)
-GNLOBJS	= $(GNLSRC:%.c=$(OBJP)/%.o)
+GNLOBJP	= $(OBJP)/$(GNLP)
+GNLOBJS	= $(GNLSRC:%.c=$(GNLOBJP)/%.o)
+PFOBJP	= $(OBJP)/$(PFP)
+PFOBJS	= $(PFSRC:%.c=$(PFOBJP)/%.o)
 AR	= ar -rcs
 RM	= rm -fr
-VPATH	= . $(SRCP) $(GNLP) $(OBJP)
+MKDIR	= mkdir -p
+VPATH	= . $(SRCP) $(OBJP) $(GNLP) $(PFP)
 
 $(OBJP)/%.o:	%.c
 		$(CC) $(CFLAGS) $(ICDS) -c $< -o $@
@@ -32,7 +42,7 @@ $(OBJP)/%.o:	%.c
 all:		$(NAME)
 
 $(OBJP):
-		mkdir -p $(OBJP)
+		$(MKDIR) $(OBJP)
 
 $(NAME):	$(OBJP) $(OBJS)
 		$(AR) $(NAME) $(OBJS)
@@ -40,8 +50,17 @@ $(NAME):	$(OBJP) $(OBJS)
 bonus:		$(NAME) $(BOBJS)
 		$(AR) $(NAME) $(BOBJS)
 
-gnl:		$(NAME) $(GNLOBJS)
+$(GNLOBJP):
+		$(MKDIR) $(GNLOBJP)
+
+gnl:		$(NAME) $(GNLOBJP) $(GNLOBJS)
 		$(AR) $(NAME) $(GNLOBJS)
+
+$(PFOBJP):
+		$(MKDIR) $(PFOBJP)
+
+printf:		$(NAME) $(PFOBJP) $(PFOBJS)
+		$(AR) $(NAME) $(PFOBJS)
 
 clean:
 		$(RM) $(OBJP)
@@ -51,4 +70,4 @@ fclean:		clean
 
 re:		fclean all
 
-.PHONY:		all bonus clean fclean re
+.PHONY:		all bonus clean fclean re gnl printf
