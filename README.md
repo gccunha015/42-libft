@@ -65,5 +65,5 @@ COMPILER COMPILER_FLAGS -o EXECUTABLE_NAME OBJECT_FILES -Llibft -lft
 ```
 
 ## Support tools
-- [valgrind]
-- [lldb]
+- [valgrind] : view and correct memory leaks
+- [lldb] : debug code
