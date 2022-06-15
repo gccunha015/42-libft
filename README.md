@@ -41,10 +41,6 @@ There are some ways to build this project:
 ```bash
 make
 ```
-or
-```bash
-make libft
-```
 - Include bonus functions
 ```bash
 make bonus
