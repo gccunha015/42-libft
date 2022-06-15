@@ -2,6 +2,8 @@
 [documentation]: https://github.com/gccunha015/42-libft/wiki
 [valgrind]: https://valgrind.org/
 [lldb]: https://lldb.llvm.org/
+[gnl]: https://github.com/gccunha015/42-get_next_line
+[ft_printf]: https://github.com/gccunha015/42-ft_printf
 
 # Libft
 ## About
@@ -18,10 +20,11 @@ The implemented functions are described in the [documentation].
 The prerequisites are as follows with the respective versions used.
 
 #### Operating System
-Ubuntu (20.04.4 LTS)
+- Ubuntu (20.04.4 LTS)
 
 #### Tools
 - git (2.25.1)
+- clang (10.0.0-4ubuntu1)
 - GNU Make (4.2.1)
 
 ### Installation
@@ -33,9 +36,26 @@ Enter the directory cloned.
 ```bash
 cd libft
 ```
-Build the static library.
+There are some ways to build this project:
+- Create basic static library:
 ```bash
 make
+```
+or
+```bash
+make libft
+```
+- Include bonus functions
+```bash
+make bonus
+```
+- Include [gnl] function
+```bash
+make gnl
+```
+- Include [ft_printf] function
+```bash
+make printf
 ```
 
 ## How to use
