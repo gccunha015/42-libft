@@ -1,10 +1,6 @@
 [C]: https://en.wikipedia.org/wiki/C_(programming_language)
 [42SP]: https://www.42sp.org.br/
 [documentation]: https://github.com/gccunha015/42-libft/wiki
-[tmux]: https://github.com/tmux/tmux/wiki 
-[vim]: https://www.vim.org/
-[valgrind]: https://valgrind.org/
-[lldb]: https://lldb.llvm.org/
 [gnl]: https://github.com/gccunha015/42-get_next_line
 [ft_printf]: https://github.com/gccunha015/42-ft_printf
 
@@ -17,12 +13,6 @@ This project is part of the [42SP] curriculum required to become a Software Engi
 
 ## What it contais
 The implemented functions are described in the [documentation].
-
-## What tools were used
-- [tmux] : multiple terminal panes
-- [vim] : edit code
-- [valgrind] : view and correct memory leaks
-- [lldb] : debug code
 
 ## How to install
 ### Prerequisites
